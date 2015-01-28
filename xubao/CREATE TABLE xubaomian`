@@ -1,0 +1,19 @@
+CREATE TABLE `xubaomian` (
+  `proposalno` varchar(22) NOT NULL DEFAULT '',
+  `comcode` varchar(10) DEFAULT '',
+  `licenseno` varchar(50) NOT NULL DEFAULT '',
+  `tbinusredname` varchar(255) DEFAULT NULL,
+  `enddate` date DEFAULT '1990-01-01',
+  `tbinsuredcode` varchar(22) DEFAULT NULL,
+  `tbidnumber` varchar(20) DEFAULT NULL,
+  `cifphone` varchar(15) DEFAULT NULL,
+  `cbphone` varchar(15) DEFAULT NULL,
+  `lpphone` varchar(15) DEFAULT NULL,
+  `othphone1` varchar(15) DEFAULT NULL,
+  `othphone2` varchar(15) DEFAULT NULL,
+  `tbflag` varchar(15) DEFAULT NULL,
+  `dateflag` varchar(15) DEFAULT NULL,
+  `othflag` varchar(10) DEFAULT NULL,
+  PRIMARY KEY (`proposalno`),
+  KEY `idx` (`licenseno`)
+) ENGINE=MyISAM DEFAULT CHARSET=utf8;

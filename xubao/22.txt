@@ -1,0 +1,40 @@
+
+E:\phpStudy\WWW\xubao>set errorlevel=0  
+
+E:\phpStudy\WWW\xubao>set path_home_mysql=e:\phpStudy\MySQL\   
+
+E:\phpStudy\WWW\xubao>set path_bin_mysql="e:\phpStudy\MySQL\bin\" 
+
+E:\phpStudy\WWW\xubao>echo "e:\phpStudy\MySQL\bin\" 
+"e:\phpStudy\MySQL\bin\"
+
+E:\phpStudy\WWW\xubao>set database_mysql=test 
+
+E:\phpStudy\WWW\xubao>set user_mysql=root 
+
+E:\phpStudy\WWW\xubao>set password_mysql=root 
+
+E:\phpStudy\WWW\xubao>"e:\phpStudy\MySQL\bin\"mysql.exe -uroot -proot test 0<mytestsql.sql 
+
+E:\phpStudy\WWW\xubao>echo end backup 
+end backup
+
+E:\phpStudy\WWW\xubao>set errorlevel=0  
+
+E:\phpStudy\WWW\xubao>set path_home_mysql=e:\phpStudy\MySQL\   
+
+E:\phpStudy\WWW\xubao>set path_bin_mysql="e:\phpStudy\MySQL\bin\" 
+
+E:\phpStudy\WWW\xubao>echo "e:\phpStudy\MySQL\bin\" 
+"e:\phpStudy\MySQL\bin\"
+
+E:\phpStudy\WWW\xubao>set database_mysql=test 
+
+E:\phpStudy\WWW\xubao>set user_mysql=root 
+
+E:\phpStudy\WWW\xubao>set password_mysql=root 
+
+E:\phpStudy\WWW\xubao>"e:\phpStudy\MySQL\bin\"mysql.exe -uroot -proot test  0<mytestsql.sql 
+
+E:\phpStudy\WWW\xubao>echo end backup 
+end backup

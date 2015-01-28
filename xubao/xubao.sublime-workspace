@@ -1,0 +1,362 @@
+{
+	"auto_complete":
+	{
+		"selected_items":
+		[
+			[
+				"p",
+				"phoneflag"
+			],
+			[
+				"pro",
+				"proposalno"
+			],
+			[
+				"li",
+				"licenseno"
+			]
+		]
+	},
+	"buffers":
+	[
+		{
+			"file": "update_xubao.php",
+			"settings":
+			{
+				"buffer_size": 700,
+				"line_ending": "Windows"
+			}
+		},
+		{
+			"file": "xubao_main.html",
+			"settings":
+			{
+				"buffer_size": 3904,
+				"line_ending": "Windows"
+			}
+		},
+		{
+			"contents": "<?php\n\n/**\n * 检测访问的ip是否为规定的允许的ip\n * Enter description here ...\n */\nfunction check_ip(){\n	$ALLOWED_IP=array('192.168.2.*','127.0.0.1','192.168.2.49');\n	$IP=getIP();\n	$check_ip_arr= explode('.',$IP);//要检测的ip拆分成数组\n	#限制IP\n	if(!in_array($IP,$ALLOWED_IP)) {\n		foreach ($ALLOWED_IP as $val){\n		    if(strpos($val,'*')!==false){//发现有*号替代符\n		    	 $arr=array();//\n		    	 $arr=explode('.', $val);\n		    	 $bl=true;//用于记录循环检测中是否有匹配成功的\n		    	 for($i=0;$i<4;$i++){\n		    	 	if($arr[$i]!='*'){//不等于*  就要进来检测，如果为*符号替代符就不检查\n		    	 		if($arr[$i]!=$check_ip_arr[$i]){\n		    	 			$bl=false;\n		    	 			break;//终止检查本个ip 继续检查下一个ip\n		    	 		}\n		    	 	}\n		    	 }//end for \n		    	 if($bl){//如果是true则找到有一个匹配成功的就返回\n		    	 	echo $IP;\n		    	 	return;\n		    	 	die;\n		    	 }\n		    }\n		}//end foreach\n		header('HTTP/1.1 403 Forbidden');\n		echo \"Access forbidden\";\n		die;\n	}\n}\n\n\n/**\n* 获得访问的IP\n * Enter description here ...\n*/\nfunction getIP() {\n	return isset($_SERVER[\"HTTP_X_FORWARDED_FOR\"])?$_SERVER[\"HTTP_X_FORWARDED_FOR\"]\n	:(isset($_SERVER[\"HTTP_CLIENT_IP\"])?$_SERVER[\"HTTP_CLIENT_IP\"]\n	:$_SERVER[\"REMOTE_ADDR\"]);\n}\n\n//$IP = getip();\n//echo $IP;\n\n?>",
+			"file": "checkip.php",
+			"file_size": 1290,
+			"file_write_time": 130664791458891145,
+			"settings":
+			{
+				"buffer_size": 1132,
+				"line_ending": "Windows"
+			}
+		}
+	],
+	"build_system": "",
+	"command_palette":
+	{
+		"height": 272.0,
+		"selected_items":
+		[
+			[
+				"Package Control: ",
+				"Package Control: Install Package"
+			]
+		],
+		"width": 400.0
+	},
+	"console":
+	{
+		"height": 316.0,
+		"history":
+		[
+			"import urllib.request,os,hashlib; h = '2deb499853c4371624f5a07e27c334aa' + 'bf8c4e67d14fb0525ba4f89698a6d7e1'; pf = 'Package Control.sublime-package'; ipp = sublime.installed_packages_path(); urllib.request.install_opener( urllib.request.build_opener( urllib.request.ProxyHandler()) ); by = urllib.request.urlopen( 'http://packagecontrol.io/' + pf.replace(' ', '%20')).read(); dh = hashlib.sha256(by).hexdigest(); print('Error validating download (got %s instead of %s), please try manual install' % (dh, h)) if dh != h else open(os.path.join( ipp, pf), 'wb' ).write(by)"
+		]
+	},
+	"distraction_free":
+	{
+		"menu_visible": true,
+		"show_minimap": false,
+		"show_open_files": false,
+		"show_tabs": false,
+		"side_bar_visible": false,
+		"status_bar_visible": false
+	},
+	"expanded_folders":
+	[
+		"/D/phpStudy/WWW/xubao",
+		"/D/phpStudy/WWW/xubao/user_reg"
+	],
+	"file_history":
+	[
+		"/D/phpStudy/WWW/xubao/data/dq_cbinfo4.txt",
+		"/D/phpStudy/WWW/xubao/data/dq_cbinfo3.csv",
+		"/D/phpStudy/WWW/xubao/show_form.php",
+		"/D/phpStudy/WWW/xubao/info.php",
+		"/D/phpStudy/WWW/xubao/data/dq_cbinfo.csv",
+		"/D/Program Files/goagent-323/local/proxy.pac",
+		"/D/phpStudy/WWW/xubao/xubaomain_table_bak.sql",
+		"/D/phpStudy/WWW/xubao/xubao.sublime-project",
+		"/E/phpStudy/WWW/test/test.php",
+		"/D/phpStudy/WWW/xubao/user_reg/login.php",
+		"/D/phpStudy/WWW/xubao/CREATE TABLE xubaomian`",
+		"/D/phpStudy/WWW/xubao/xubao_main.php",
+		"/D/phpStudy/WWW/xubao/update_xubao.php",
+		"/D/phpStudy/WWW/xubao/mytestsql.sql",
+		"/D/phpStudy/WWW/xubao/mysql.bat",
+		"/D/phpStudy/WWW/xubao/导入mysql.bat",
+		"/D/phpStudy/WWW/xubao/xubao_main.html",
+		"/C/Users/PICC/AppData/Roaming/Sublime Text 2/Packages/Default/Preferences.sublime-settings"
+	],
+	"find":
+	{
+		"height": 35.0
+	},
+	"find_in_files":
+	{
+		"height": 0.0,
+		"where_history":
+		[
+		]
+	},
+	"find_state":
+	{
+		"case_sensitive": false,
+		"find_history":
+		[
+			"itemid",
+			"productid",
+			"itemid",
+			"productid",
+			"itemid"
+		],
+		"highlight": true,
+		"in_selection": false,
+		"preserve_case": false,
+		"regex": false,
+		"replace_history":
+		[
+			"tbinsuredname",
+			"licenseno",
+			"tbinsuredname",
+			"licenseno",
+			"tbinsuredname"
+		],
+		"reverse": false,
+		"show_context": true,
+		"use_buffer2": true,
+		"whole_word": false,
+		"wrap": true
+	},
+	"groups":
+	[
+		{
+			"selected": 1,
+			"sheets":
+			[
+				{
+					"buffer": 0,
+					"file": "update_xubao.php",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 700,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								408,
+								408
+							]
+						],
+						"settings":
+						{
+							"force_encoding": "UTF-8",
+							"origin_encoding": "UTF-8",
+							"syntax": "Packages/PHP/PHP.tmLanguage"
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 1,
+					"type": "text"
+				},
+				{
+					"buffer": 1,
+					"file": "xubao_main.html",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 3904,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								0,
+								0
+							]
+						],
+						"settings":
+						{
+							"origin_encoding": "UTF-8",
+							"syntax": "Packages/HTML/HTML.tmLanguage",
+							"translate_tabs_to_spaces": false
+						},
+						"translation.x": 0.0,
+						"translation.y": 1482.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 0,
+					"type": "text"
+				},
+				{
+					"buffer": 2,
+					"file": "checkip.php",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 1132,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								1119,
+								1119
+							]
+						],
+						"settings":
+						{
+							"in_converting": true,
+							"origin_encoding": "GBK",
+							"syntax": "Packages/PHP/PHP.tmLanguage",
+							"translate_tabs_to_spaces": false
+						},
+						"translation.x": -0.0,
+						"translation.y": 399.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 2,
+					"type": "text"
+				}
+			]
+		}
+	],
+	"incremental_find":
+	{
+		"height": 27.0
+	},
+	"input":
+	{
+		"height": 31.0
+	},
+	"layout":
+	{
+		"cells":
+		[
+			[
+				0,
+				0,
+				1,
+				1
+			]
+		],
+		"cols":
+		[
+			0.0,
+			1.0
+		],
+		"rows":
+		[
+			0.0,
+			1.0
+		]
+	},
+	"menu_visible": true,
+	"output.find_results":
+	{
+		"height": 0.0
+	},
+	"output.xdebug":
+	{
+		"height": 0.0
+	},
+	"project": "xubao.sublime-project",
+	"replace":
+	{
+		"height": 64.0
+	},
+	"save_all_on_build": false,
+	"select_file":
+	{
+		"height": 0.0,
+		"selected_items":
+		[
+		],
+		"width": 0.0
+	},
+	"select_project":
+	{
+		"height": 0.0,
+		"selected_items":
+		[
+		],
+		"width": 0.0
+	},
+	"select_symbol":
+	{
+		"height": 0.0,
+		"selected_items":
+		[
+		],
+		"width": 0.0
+	},
+	"selected_group": 0,
+	"settings":
+	{
+		"xdebug":
+		{
+			"hide_conflict": false,
+			"restore_index":
+			{
+				"18":
+				{
+					"group": 0,
+					"index": 0
+				}
+			},
+			"restore_layout":
+			{
+				"cells":
+				[
+					[
+						0,
+						0,
+						1,
+						1
+					]
+				],
+				"cols":
+				[
+					0.0,
+					1.0
+				],
+				"rows":
+				[
+					0.0,
+					1.0
+				]
+			}
+		}
+	},
+	"show_minimap": true,
+	"show_open_files": false,
+	"show_tabs": true,
+	"side_bar_visible": true,
+	"side_bar_width": 191.0,
+	"status_bar_visible": true,
+	"template_settings":
+	{
+	}
+}

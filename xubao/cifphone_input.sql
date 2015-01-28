@@ -1,0 +1,4 @@
+LOAD DATA LOCAL INFILE "e:\\phpStudy\\WWW\\xubao\\data\\cif_phone.unl"
+INTO TABLE test.cifphone CHARACTER SET gbk
+FIELDS TERMINATED BY ',' OPTIONALLY ENCLOSED BY '"' ESCAPED BY '"'
+LINES TERMINATED BY '\n'

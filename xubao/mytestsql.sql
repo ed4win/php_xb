@@ -1,0 +1,4 @@
+LOAD DATA LOCAL INFILE e:\\phpStudy\\WWW\\xubao\\data\\custmercode.csv
+INTO TABLE test.xubaomain CHARACTER SET gb2312
+FIELDS TERMINATED BY ',' OPTIONALLY ENCLOSED BY '"' ESCAPED BY '"'
+LINES TERMINATED BY '\r\n'
