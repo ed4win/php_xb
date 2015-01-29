@@ -13,8 +13,8 @@ define('IN_SYS', TRUE);
 	//mysql_query("SET NAMES utf-8");
 	include ('../conn.php');
 	//mysql_real_escape_string() 防止依赖注入,但是要考虑连接的当前字符集
-	$tbinsuredname = isset($_POST['tbinsuredname']) ? mysql_real_escape_string($_POST['tbinsuredname']) : 'adc3949ba59abbe56';
-	$licenseno = isset($_POST['licenseno']) ? mysql_real_escape_string($_POST['licenseno']) : 'adc3949ba59abbe56';
+	//$tbinsuredname = isset($_POST['tbinsuredname']) ? mysql_real_escape_string($_POST['tbinsuredname']) : 'adc3949ba59abbe56';
+	//$licenseno = isset($_POST['licenseno']) ? mysql_real_escape_string($_POST['licenseno']) : 'adc3949ba59abbe56';
 	$stdate1 = isset($_POST['stdate']) ? $_POST['stdate'] : '1900-01-01';
 	$eddate1 = isset($_POST['eddate']) ? $_POST['eddate'] : '1900-01-01';
 	//echo 'stdate toooo',$_POST['stdate'];

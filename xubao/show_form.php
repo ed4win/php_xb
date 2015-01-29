@@ -9,6 +9,14 @@
 			<td><input name="brandname" class="easyui-validatebox"  readonly></input></td>
 		</tr>
 		<tr>
+			<td>客户代码</td>
+			<td><input name="tbinsuredcode" class="easyui-validatebox"  readonly></input></td>
+			<td>发动机号码</td>
+			<td><input name="engineno" class="easyui-validatebox" ></input></td>
+			<td>车架号</td>
+			<td><input name="vinno" class="easyui-validatebox"  readonly></input></td>
+		</tr>
+		<tr>
 			<td>身份证号码</td>
 			<td><input name="tbidnumber" class="easyui-validatebox"  readonly></input></td>
 			<td>终保日期</td>

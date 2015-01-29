@@ -35,7 +35,7 @@
 		});
 		function doSearch(){
 			$('#tt').datagrid('load',{
-				tbinsuredname: $('#tbinsuredname').val(),
+				engineno: $('#engineno').val(),
 				licenseno: $('#licenseno').val()
 			});
 		}
@@ -110,8 +110,8 @@
 		</thead>
 	</table>
 	<div id="tb" style="padding:3px">
-		<span>客户名称:</span>
-		<input id="tbinsuredname" style="line-height:26px;border:1px solid #ccc">
+		<span>发动机号码:</span>
+		<input id="engineno" style="line-height:26px;border:1px solid #ccc">
 		<span>车牌号码:</span>
 		<input id="licenseno" style="line-height:26px;border:1px solid #ccc">
 		<a href="#" class="easyui-linkbutton" plain="true" onclick="doSearch()">Search</a>
