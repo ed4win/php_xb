@@ -20,11 +20,13 @@ if(!isset($_POST['submit'])){
 $username = htmlspecialchars($_POST['username']);
 $pass= ($_POST['password']);
 $password = MD5($_POST['password']);
+include('../checkip.php');
+$currentIP = getip();
 //echo $pass;
 //包含数据库连接文件
 include('../conn.php');
 //检测用户名及密码是否正确
-$check_query = mysql_query("select userid,power from user where username='$username' and password='$password' limit 1");
+$check_query = mysql_query("select userid,power from user where username='$username' and password='$password'and ip = '$currentIP' limit 1");
 if (!$check_query) { // add this check.
     die('Invalid query2: ' . mysql_error());
 }
@@ -52,7 +54,7 @@ elseif ($result['power'] == 2){
     } 
 }else {
     //echo $check_query;
-    //echo '密码',$password ;
+    echo 'ip',$currentIP;
 	exit('登录失败！点击此处 <a href="javascript:history.back(-1);">返回</a> 重试');
 }
 ?>
