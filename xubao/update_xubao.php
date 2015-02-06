@@ -3,6 +3,8 @@
 //$id = intval($_REQUEST['id']);
 $proposalno = $_REQUEST['proposalno'];
 $phoneflag = $_REQUEST['phoneflag'];
+$jinduflag = $_REQUEST['jinduflag'];
+$remark = $_REQUEST['remark'];
 //$carkind = $_REQUEST['carkind'];
 //echo $phoneflag;
 //$listprice = $_REQUEST['listprice'];
@@ -13,7 +15,7 @@ $phoneflag = $_REQUEST['phoneflag'];
 define('IN_SYS', TRUE);
 include 'conn.php';
 
-$sql = "update xubaomain set phoneflag ='$phoneflag' where proposalno='$proposalno'";
+$sql = "update xubaomain set phoneflag ='$phoneflag',jinduflag = '$jinduflag' ,remark = '$remark' where proposalno='$proposalno'";
 @mysql_query($sql);
 echo json_encode(array(
 	//'itemid' => $itemid,
@@ -23,6 +25,8 @@ echo json_encode(array(
 	//'attr1' => $attr1,
     //'status' => $status
 	//回写phoneflag 标志
-    'phoneflag' => $phoneflag
+    'phoneflag' => $phoneflag,
+    'jinduflag' => $jinduflag,
+    'remark' => $remark
 ));
 ?>

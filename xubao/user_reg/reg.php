@@ -34,11 +34,11 @@ $IP = getip();
 echo $IP;
 $sql = "INSERT INTO user(username,password,comcode,ip)VALUES('$username','$password','$comcode','$IP')";
 if(mysql_query($sql,$conn)){
-echo $sql, '<br />';
+//echo $sql, '<br />';
 	exit('用户注册成功！点击此处 <a href="login.html">登录</a>');
 } else {
 	echo '抱歉！添加数据失败：',mysql_error(),'<br />';
-    echo $sql, '<br />';
+    //echo $sql, '<br />';
 	echo '点击此处 <a href="javascript:history.back(-1);">返回</a> 重试';
 }
 ?>

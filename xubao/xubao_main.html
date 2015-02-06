@@ -73,12 +73,14 @@
 		if(login == '0')
 			{
 				alert ("你未登录,请先登录系统.");
-				location.href = '/user_reg/login.html';}
+				location.href = '/xubao/user_reg/login.html';}
 	}	
 	</script>
 </head>
 
-<body  oncopy="alert('对不起，禁止复制！');return false;" onload="checklogin()"> 
+<body  onload="checklogin()"> 
+<!--   oncopy="alert('对不起，禁止复制！');return false;"  -->
+
 	<h2>续保专岗——客户信息查询
 	</h2>
 	<div class="demo-info" style="margin-bottom:10px">
@@ -90,14 +92,9 @@
 		<!-- <script  type="text/javascript">$("#userinfo").append("<span>未登录");</script> -->
 		</div>
 	</div>
-	
-	<table id="tt" class="easyui-datagrid" style="width:1000px;height:650px"
-			
-            url="xubao_main.php"
-			title="Searching" iconCls="icon-search" toolbar="#tb"
-            fitColumns="true" singleSelect="true"
-			pagination="true">
-
+	<div class="easyui-tabs" style="width:1000px;height:650px">
+    <div title = '续保信息' style="padding:10px;-moz-user-select:none;" unselectable="on" onselectstart="return false;">
+	<table id="tt" class="easyui-datagrid" 	style="height:580px" url="xubao_main.php" title="Searching" iconCls="icon-search" toolbar="#tb"   fitColumns="true" singleSelect="true"pagination="true">
 		<thead>
 			<tr>
 				<th field="proposalno" width="80">投保单号</th>
@@ -111,11 +108,34 @@
 	</table>
 	<div id="tb" style="padding:3px">
 		<span>发动机号码:</span>
-		<input id="engineno" style="line-height:26px;border:1px solid #ccc">
+		<input id="engineno" style="border:1px solid #ccc">
 		<span>车牌号码:</span>
-		<input id="licenseno" style="line-height:26px;border:1px solid #ccc">
+		<input id="licenseno" style="border:1px solid #ccc">
 		<a href="#" class="easyui-linkbutton" plain="true" onclick="doSearch()">Search</a>
 	</div>
+</div><!-- div 到期信息-->
+<div title = '脱保信息'  closable="true" style="padding:10px;">
+	<table id="tb_tt" class="easyui-datagrid" 	style="height:580px" url="xubao_main.php" title="Searching" iconCls="icon-search" toolbar="#tb_tb"   fitColumns="true" singleSelect="true"pagination="true">
+		<thead>
+			<tr>
+				<th field="proposalno" width="80">投保单号</th>
+				<th field="licenseno" width="60">车牌号码</th>
+				<th field="tbinsuredname" width="80" align="right">客户姓名</th>
+				<th field="cifphone" width = "80" align="right">CIF电话</th>
+				<th field="lpphone" width="80" align="right">理赔电话</th>
+				<th field="othphone1" width="80" align="right">匹配电话</th>
+			</tr>
+		</thead>
+	</table>
+	<div id="tb_tb" style="padding:3px">
+		<span>发动机号码:</span>
+		<input id="tb_engineno" style="line-height:26px;border:1px solid #ccc">
+		<span>车牌号码:</span>
+		<input id="tb_licenseno" style="line-height:26px;border:1px solid #ccc">
+		<a href="#" class="easyui-linkbutton" plain="true" onclick="doSearch()">Search</a>
+	</div>
+</div>
+</div>
 <!--禁止另存为-->
 <noscript> 
 <iframe src="*.htm"></iframe> 
